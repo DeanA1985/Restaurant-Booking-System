@@ -16,7 +16,7 @@ class Table(models.Model):
         return f"Table {self.number} (Seats {self.capacity})"
 
 # ========================================
-# Booking Model (Represents reservaations)
+# Booking Model (Represents reservations)
 # ========================================
 
 
