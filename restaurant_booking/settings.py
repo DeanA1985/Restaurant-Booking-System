@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # Register the booking app
     'bookings',
+
+    # Add the new authentication app
+    'accounts',
 ]
 
 MIDDLEWARE = [
