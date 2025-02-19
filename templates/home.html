@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome to BookATable</h1>
 
-    {% if user.is authenticated %}
+    {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}!</p>
     <a href="{% url 'logout' %}">Logout</a>
     {% else %}
