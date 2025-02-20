@@ -10,8 +10,8 @@ def register(request):
             user = form.save()
             login(request, user)
             return redirect('home')
-        else:
-            form = UserCreationForm()
+    else:
+        form = UserCreationForm()
 
         return render(request, "registration/register.html", {"form": form})
 
