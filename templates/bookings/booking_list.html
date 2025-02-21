@@ -7,6 +7,8 @@
 </head>
 <body>
     <h2>Your Bookings</h2>
+
+    <p><a href="{% url 'create_booking' %}">Create a New Booking</a></p>
     
     {% if bookings %}
     <ul>
