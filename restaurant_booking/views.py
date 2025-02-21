@@ -34,10 +34,10 @@ def create_booking(request):
             booking.user = request.user
             booking.save()  # Saves to database
             return redirect("view_bookings")
-        else:
-            form = BookingForm()
+    else:
+        form = BookingForm()
 
-            return render(
+    return render(
                 request,
                 "bookings/booking_form.html",
                 {"form": form},
