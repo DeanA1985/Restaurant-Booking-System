@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Bookings</title>
+</head>
+<body>
+    <h2>Your Bookings</h2>
+    
+    {% if bookings %}
+    <ul>
+        {% for booking in bookings %}
+        <li>
+            Booking for {{ booking.guests }} guests
+            on {{ booking.date }} at {{ booking.time}}
+            (Table {{ booking.table_number }})
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No bookings found.</p>
+    {% endif %}
+
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</body>
+</html>
+    
+</body>
+</html>
