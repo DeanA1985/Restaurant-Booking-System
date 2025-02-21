@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from accounts.models import Booking
+from .forms import BookingForm  # Import the Booking form
 
 # Restrict Access to Bookings
 
@@ -19,3 +20,25 @@ def view_bookings(request):
         "bookings/booking_list.html",
         {"bookings": bookings}
     )
+
+# Create a new booking
+
+
+@login_required
+def create_booking(request):
+    """Handles booking creation form submission."""
+    if request.method == "POST":
+        form = BookingForm(request.POST)  # Get data from form
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()  # Saves to database
+            return redirect("view_bookings")
+        else:
+            form = BookingForm()
+
+            return render(
+                request,
+                "bookings/booking_form.html",
+                {"form": form},
+            )
