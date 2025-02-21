@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <title>Book a Table</title>
+  </head>
+  <body>
+    <h2>Book a Table</h2>
+
+    <!-- If there are form errors show an alert-->
+    {% if form.errors %}
+    <p style="color: red">Please correct the errors below.</p>
+    {% endif %}
+
+    <!-- Form to book a table -->
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Submit Booking</button>
+    </form>
+
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+  </body>
+</html>
