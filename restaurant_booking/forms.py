@@ -10,8 +10,10 @@ class BookingForm(forms.ModelForm):
 
 
 def clean_date(self):
-    date = self.cleaned_data.get('date')
-    if date < timezone.now().date():  # Checks if the date is before today
+    date = self.cleaned_data.get("date")
+    print("Checking date validation.")
+    if date and date < timezone.now().date():  # Checks if the date is before
+        print("Error: Date is in the past!")
         raise forms.ValidationError("Booking date cannot be in the past")
     return date
 

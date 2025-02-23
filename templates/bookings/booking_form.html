@@ -2,20 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book a Table</title>
   </head>
   <body>
     <h2>Book a Table</h2>
 
-    <!-- If there are form errors show an alert-->
+    <!-- Show errors at the top -->
     {% if form.errors %}
     <p style="color: red">Please correct the errors below.</p>
     {% endif %}
 
-    <!-- Form to book a table -->
     <form method="post">
-      {% csrf_token %} {{ form.as_p }}
+      {% csrf_token %}
+
+      <div>
+        <label for="id_table_number">Table Number:</label>
+        {{ form.table_number }} {% if form.table_number.errors %}
+        <p style="color: red">{{ form.table_number.errors.as_text }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <label for="id_date">Date:</label>
+        {{ form.date }} {% if form.date.errors %}
+        <p style="color: red">{{ form.date.errors.as_text }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <label for="id_time">Time:</label>
+        {{ form.time }}
+      </div>
+
+      <div>
+        <label for="id_guests">Number of Guests:</label>
+        {{ form.guests }} {% if form.guests.errors %}
+        <p style="color: red">{{ form.guests.errors.as_text }}</p>
+        {% endif %}
+      </div>
+
       <button type="submit">Submit Booking</button>
     </form>
 

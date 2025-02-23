@@ -24,14 +24,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('accounts/', include("accounts.urls")),  # Inc authentication system
     path('accounts/', include("django.contrib.auth.urls")),
-    path(
-        'bookings/',
-        view_bookings,
-        name="view_bookings"
-    ),  # path for viewing bookings
-    path(
-        'bookings/new/',
-        create_booking,
-        name="create_booking"
-    ),  # path for creating a new booking
+
+    #  Booking URLSS
+
+    path('bookings/', view_bookings, name="view_bookings"),
+    path('bookings/new/', create_booking, name="create_booking"),
 ]
