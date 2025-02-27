@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,43 +9,86 @@
   <body>
     <h2>Book a Table</h2>
 
-    <!-- Show errors at the top -->
-    {% if form.errors %}
-    <p style="color: red">Please correct the errors below.</p>
-    {% endif %}
+    <!-- Show form errors-->
 
-    <form method="post">
+    {% if form.errors %}
+    <div class="form-errors">
+      <p>Please correct the following errors:</p>
+      <ul>
+        {% for field, errors in form.errors.items%} {% for error in errors %}
+        <li>{{ field|title }}: {{ error}}</li>
+        {% endfor %} {% endfor %}
+      </ul>
+    </div>
+    {% endif%}
+
+    <form
+      id="bookingForm"
+      method="post"
+      action="{% url 'create_booking' %}"
+      novalidate
+    >
       {% csrf_token %}
 
-      <div>
-        <label for="id_table_number">Table Number:</label>
-        {{ form.table_number }} {% if form.table_number.errors %}
-        <p style="color: red">{{ form.table_number.errors.as_text }}</p>
-        {% endif %}
-      </div>
+      <!--Table Number-->
+      <label for="table_number">Table Number (1-20):</label>
+      <input
+        type="number"
+        id="table_number"
+        name="table_number"
+        min="1"
+        max="20"
+        required
+        value="{{ form.table_number.value|default:''}}"
+      />
+      <small id="table-error" class="error-message"></small>
+      <br />
 
-      <div>
-        <label for="id_date">Date:</label>
-        {{ form.date }} {% if form.date.errors %}
-        <p style="color: red">{{ form.date.errors.as_text }}</p>
-        {% endif %}
-      </div>
+      <!-- Date Selection -->
+      <label for="date">Date:</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        required
+        value="{{ form.date.value|default:'' }}"
+      />
+      <small id="date-error" class="error-message"></small>
+      <p id="date-display"></p>
+      <br />
 
-      <div>
-        <label for="id_time">Time:</label>
-        {{ form.time }}
-      </div>
+      <!--Time Selection -->
+      <label for="time">Time (9 AM - 9 PM):</label>
+      <input
+        type="time"
+        id="time"
+        name="time"
+        required
+        value="{{ form.time.value|default:'' }}"
+      />
+      <small id="time-error" class="error-message"></small>
+      <br />
 
-      <div>
-        <label for="id_guests">Number of Guests:</label>
-        {{ form.guests }} {% if form.guests.errors %}
-        <p style="color: red">{{ form.guests.errors.as_text }}</p>
-        {% endif %}
-      </div>
+      <!-- Number of Guests -->
+      <label for="guests">Number of Guests (1-10):</label>
+      <input
+        type="number"
+        id="guests"
+        name="guests"
+        min="1"
+        max="10"
+        required
+        value="{{ form.guests.value|default:'' }}"
+      />
+      <small id="guests-error" class="error-message"></small>
 
       <button type="submit">Submit Booking</button>
     </form>
 
-    <p><a href="{% url 'home' %}">Back to Home</a></p>
+    <br />
+    <a href="{% url 'view_bookings' %}">View My Bookings</a> |
+    <a href="{% url 'home' %}">Back to Home</a>
+
+    <script src="{% static 'js/validation.js' %}"></script>
   </body>
 </html>
