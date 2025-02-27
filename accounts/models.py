@@ -22,8 +22,26 @@ class Booking(models.Model):
         ordering = ['date', 'time']
 
     def clean(self):
+        """ Custom validation to prevent past bookings and double bookings"""
+        if not self.date:
+            raise ValidationError("Date is required.")
+
         if self.date < timezone.now().date():
-            raise ValidationError("Booking date cannot be in the past")
+            raise ValidationError("Booking date cannot be in the past.")
+
+        # Prevent double bookngs for the same table,date and time
+        is_booked = Booking.objects.filter(
+            table_number=self.table_number,
+            date=self.date,
+            time=self.time
+        ).exists()
+
+        if is_booked:
+            raise ValidationError(
+                f"Table {self.table_number} is already booked at this time."
+            )
+
+        super().clean()
 
     def save(self, *args, **kwargs):
         self.full_clean()
