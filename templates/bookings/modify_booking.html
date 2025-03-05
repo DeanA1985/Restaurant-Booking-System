@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Modify Booking</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+
+    <!--Table Number-->
+    <label for="table_number">Table Number (1-20):</label>
+    <input type="number" id="table_number" name="table_number"
+           value="{{ form.table_number.value|default:'' }}"
+           min="1" max="20" required>
+
+    <!--Date Field-->
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date"
+           value="{{ form.date.value|default:'' }}" required>
+           
+    <!--Time Selection-->
+    <label for="time">Time Selection:</label>
+    <select id="time" name="time" required>
+        <option value="" disabled> Select a time slot</option>
+        {% for available_time in available_times %}   
+            <option value="{{ available_time }}" {% if form.time.value == available_time %}selected{% endif %}>
+                {{ available_time }}  
+            </option>
+            {% endfor %}
+    </select>
+
+    <!--Number of Guests-->
+    <label for="guests">Number of Guests (1-10):</label>
+    <input type="number" id="guests" name="guests"
+           value="{{ form.guests.value|default:'' }}"
+           min="1" max="10" required>
+
+    <button type="submit">Update Booking</button>
+</form>
+
+<!-- Cancel Button -->
+<a href="{% url 'view_bookings' %}">Cancel</a>
+
+{% endblock %}
+

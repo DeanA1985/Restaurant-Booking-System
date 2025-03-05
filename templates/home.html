@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home Page</title>
-  </head>
-  <body>
-    <h1>Welcome to BookATable</h1>
+{% extends "base.html"%} {% block content %}
 
-    {% if user.is_authenticated %}
-    <!-- Checks if a user is logged in -->
-    <p>Welcome, {{ user.username}}!</p>
-    <!-- Displays the logged-in user's username -->
+<h1>Welcome to BookATable</h1>
 
-    <!-- Link to the booking page, only visible to logged-in users-->
-    <a href="{%url 'create_booking' %}">Book a Table</a><br />
+{% if user.is_authenticated %}
+<!-- Checks if a user is logged in -->
+<p>Welcome, {{ user.username}}!</p>
+<!-- Displays the logged-in user's username -->
 
-    <!-- Logout link for users who are logged in-->
-    <a href="{% url 'logout' %}">Logout</a>
+<!-- Link to the booking page, only visible to logged-in users-->
+<a href="{%url 'create_booking' %}">Book a Table</a><br />
 
-    {% else %}
-    <!-- If the user is not logged in, show login and register links-->
-    <a href="{% url 'login' %}">Login</a>
-    <!-- Link to login page-->
-    <a href="{% url 'register' %}">Register</a>
-    <!-- Link to register page-->
-    {% endif %}
-    <!-- Ends the conditional statement-->
-  </body>
-</html>
+<!-- Logout link for users who are logged in-->
+<a href="{% url 'logout' %}">Logout</a>
+
+{% else %}
+<!-- If the user is not logged in, show login and register links-->
+<p>Please log in or register to book a table.</p>
+
+<a href="{% url 'login' %}">Login</a>
+<!-- Link to login page-->
+<a href="{% url 'register' %}">Register</a>
+<!-- Link to register page-->
+{% endif %}
+<!-- Ends the conditional statement-->
+{% endblock %}
