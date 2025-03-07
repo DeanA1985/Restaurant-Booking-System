@@ -7,8 +7,8 @@
 <ul>
   {% for booking in bookings %}
   <li>
-    Booking for {{ booking.guests }} guests on {{ booking.date }} at {{
-    booking.time|time:"H:i" }} (Table {{ booking.table_number }})
+    Booking for {{ booking.guests }} guests on {{ booking.date }} at {{ booking.time|time }} (Table {{ booking.table_number }})
+
     <br />
     <a href="{% url 'modify_booking' booking.id %}">Modify Booking</a>
     <a
