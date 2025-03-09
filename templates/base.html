@@ -1,33 +1,63 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookATable</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--Google Font-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+    />
+    <!--CSS Styling-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+
   <body>
-    <header>
+    <!--Navbar and Container-->
+    <div class="container">
       <nav class="navbar">
-        <div class="logo container">
-          <a href="{% url 'home' %}">
-    <nav>
-      <a href="{% url 'home' %}">Home</a> |
-      <a href="{% url 'view_bookings' %}">My Bookings</a> |
-      <a href="{% url 'create_booking' %}">Book a Table</a>
+        <ul class="nav-links">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'view_bookings' %}">My Bookings</a></li>
+          <li><a href="{% url 'create_booking' %}">Book a Table</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
 
-      {% if user.is_authenticated %} |
-      <a href="{% url 'logout' %}">Logout</a> {% else %} |
-      <a href="{% url 'login' %}">Login</a>
+      <hr />
+
+      <h1>Welcome to BookATable</h1>
+
+      <main>{% block content %} {% endblock %}</main>
+
+      <!--DJANGO messages-->
+      {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
       {% endif %}
-    </nav>
+    </div>
 
-    <div class="content">{% block content %} {% endblock %}</div>
-
-    <!--Include validation.js-->
+    <!--Javascript-->
     <script src="{% static 'js/validation.js' %}"></script>
+
+    <script>
+      setTimeout(function () {
+        const alerts = document.querySelectorAll(".alert");
+        alerts.forEach(function (alert) {
+          alert.style.transition = "opacity 1s ease";
+          alert.style.opacity = 0;
+          setTimeout(() => alert.remove(), 1000);
+        });
+      }, 3000);
+    </script>
   </body>
 </html>
