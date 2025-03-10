@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <h2>Your Bookings</h2>
 
-<p><a href="{% url 'create_booking' %}">Create a New Booking</a></p>
+<p><a href="{% url 'create_booking' %}" class="btn-soft">Create a New Booking</a></p>
 
 {% if bookings %}
 <ul>
@@ -10,9 +10,9 @@
     Booking for {{ booking.guests }} guests on {{ booking.date }} at {{ booking.time|time }} (Table {{ booking.table_number }})
 
     <br />
-    <a href="{% url 'modify_booking' booking.id %}">Modify Booking</a>
+    <a href="{% url 'modify_booking' booking.id %}" class="modify-btn">Modify Booking</a>
     <a
-      href="{% url 'cancel_booking' booking.id %}"
+      href="{% url 'cancel_booking' booking.id %}" class="delete-btn"
       onclick="return confirm('Are you sure you want to cancel this booking?');"
     >
       Delete
@@ -24,5 +24,5 @@
 <p>No bookings found.</p>
 {% endif %}
 
-<p><a href="{% url 'home' %}">Back to Home</a></p>
+<p><a href="{% url 'home' %}" class="btn-soft">Back to Home</a></p>
 {% endblock %}

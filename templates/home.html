@@ -5,18 +5,22 @@
 <!-- Displays the logged-in user's username -->
 
 <!-- Link to the booking page, only visible to logged-in users-->
-<a href="{%url 'create_booking' %}">Book a Table</a><br />
+<a href="{%url 'create_booking' %}" class="btn-soft" style="margin-right: 10px"
+  >Book a Table</a
+>
 
 <!-- Logout link for users who are logged in-->
-<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'logout' %}" class="btn-soft">Logout</a>
 
 {% else %}
 <!-- If the user is not logged in, show login and register links-->
 <p>Please log in or register to book a table.</p>
 
-<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'login' %}" class="btn-soft" style="margin-right: 10px"
+  >Login</a
+>
 <!-- Link to login page-->
-<a href="{% url 'register' %}">Register</a>
+<a href="{% url 'register' %}" class="btn-soft">Register</a>
 <!-- Link to register page-->
 {% endif %}
 <!-- Ends the conditional statement-->

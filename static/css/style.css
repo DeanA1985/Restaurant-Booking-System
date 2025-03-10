@@ -132,3 +132,45 @@ h1 {
 .alert.fade-out {
   opacity: 0;
 }
+
+.btn-soft {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d3dce6;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.btn-soft:hover {
+  background-color: #b4c2d1;
+  color: #000;
+}
+
+.modify-btn {
+  color: #00ffff;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.modify-btn:hover {
+  color: #00cccc;
+  text-decoration: underline;
+}
+
+.delete-btn {
+  color: #ff4444;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
