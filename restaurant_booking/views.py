@@ -37,6 +37,13 @@ def view_bookings(request):
         "bookings/booking_list.html",
         {"bookings": bookings}
     )
+# Menu Page View
+
+
+def menu_view(request):
+    """View the restaurant's menu"""
+    return render(request, 'menu.html')
+
 # =======================================
 # Create a new booking with validation
 # =======================================
@@ -55,16 +62,19 @@ def create_booking(request):
     if request.method == "POST":
         form = BookingForm(request.POST)  # Get data from form
         if form.is_valid():
-            try:
-                booking = form.save(commit=False)
-                booking.user = request.user
-                booking.clean()
-                booking.save()  # Saves to database
-                messages.success(request, "Booking created successfully!")
-                return redirect("view_bookings")
-            except ValidationError as e:
-                form.add_error(None, e.message)
-                messages.error(request, str(e))
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.clean()
+            booking.save()  # Saves to database
+            messages.success(request, "Booking created successfully!")
+            return redirect("view_bookings")
+        else:
+            messages.error(
+                request,
+                "This table has already been booked for "
+                "the selected date and time. "
+                "Please choose another time or table."
+            )
     else:
         form = BookingForm()
 
