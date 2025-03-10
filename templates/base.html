@@ -22,6 +22,7 @@
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'view_bookings' %}">My Bookings</a></li>
           <li><a href="{% url 'create_booking' %}">Book a Table</a></li>
+          <li><a href="{% url 'menu' %}">Menu</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
