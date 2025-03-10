@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-{% extends "base.html"%} {% block content %}
-
-<h1>Welcome to BookATable</h1>
-
-{% if user.is_authenticated %}
+{% extends "base.html"%} {% block content %} {% if user.is_authenticated %}
 <!-- Checks if a user is logged in -->
 <p>Welcome, {{ user.username}}!</p>
 <!-- Displays the logged-in user's username -->
