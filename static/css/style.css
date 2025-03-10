@@ -152,6 +152,10 @@ h1 {
   color: #000;
 }
 
+.btn-soft i {
+  margin-right: 6px;
+}
+
 .modify-btn {
   color: #00ffff;
   font-weight: bold;
