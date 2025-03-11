@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.auth.models import User
 from restaurant_booking.forms import BookingForm
 
 #  User Registration View
@@ -18,6 +20,25 @@ def register(request):
         form = UserCreationForm()
 
     return render(request, "registration/register.html", {"form": form})
+
+# Forgot Password View
+
+
+def forgot_password(request):
+    if request.method == "POST":
+        email = request.POST.get("email")
+        try:
+            User.objects.get(email=email)
+            messages.success(
+                request,
+                "A password reset link has been sent to your email."
+            )
+        except User.DoesNotExist:
+            messages.error(request, "No account found with that email.")
+        return redirect('forgot_password')
+
+    return render(request, "forgot_password.html")
+
 
 #  Home Page View
 
