@@ -1,3 +1,9 @@
+/*
+Base styles for the entire page layout.
+Sets font family, removes default margin/padding,
+and applies a background image with proper sizing.
+*/
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -6,6 +12,11 @@ body {
   background-size: cover;
   color: #fff;
 }
+
+/*
+  Container for page content.
+  Adds padding and background color with transparency for readability.
+ */
 
 .container {
   position: absolute;
@@ -18,12 +29,21 @@ body {
   width: fit-content;
 }
 
+/*
+  Styles the main navbar container.
+  Uses flexbox for layout and spacing between items.
+ */
+
 .navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
+
+/* Removes default list styles from nav links
+and adds custom spacing.
+*/
 
 .nav-links {
   list-style: none;
@@ -32,6 +52,11 @@ body {
   margin: 0;
   gap: 15px;
 }
+
+/*
+ Anchors links in the navbar
+ with no underline, custom font color, padding, and hover effects.
+ */
 
 .nav-links li {
   padding: 0;
@@ -132,6 +157,7 @@ h1 {
 .alert.fade-out {
   opacity: 0;
 }
+/* key button styling */
 
 .btn-soft {
   display: inline-block;
@@ -155,6 +181,8 @@ h1 {
 .btn-soft i {
   margin-right: 6px;
 }
+
+/* Amend booking link styling */
 
 .modify-btn {
   color: #00ffff;
