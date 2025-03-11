@@ -1,3 +1,8 @@
+"""
+Defines database models for the restaurant booking system.
+
+Includes the Booking model used to store table reservations.
+"""
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
@@ -8,7 +13,10 @@ User = get_user_model()
 
 
 class Booking(models.Model):
-    """Model for storing restaurant bookings"""
+    """
+    Represents a booking made by a user for a specific table,
+    date, time, and number of guests.
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     table_number = models.PositiveIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(20)]

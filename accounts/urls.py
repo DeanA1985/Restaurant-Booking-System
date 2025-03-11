@@ -1,3 +1,8 @@
+"""
+URL configuration for the accounts app.
+This file incldues route definitions for user registration,
+login, logout, and custom password reset functionality.
+"""
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views

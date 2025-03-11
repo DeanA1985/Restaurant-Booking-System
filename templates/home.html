@@ -6,25 +6,21 @@
 
 <!-- Link to the booking page, only visible to logged-in users-->
 <a href="{%url 'create_booking' %}" class="btn-soft">
-  <i class="fas fa-utensils" style="margin-right: 6px"></i>Book a Table</a
->
+  <i class="fas fa-utensils" style="margin-right: 6px"></i>Book a Table</a>
 
 <!-- Logout link for users who are logged in-->
 <a href="{% url 'logout' %}" class="btn-soft">
-  <i class="fas fa-sign-out-alt" style="margin-right: 6px"></i>Logout</a
->
+  <i class="fas fa-sign-out-alt" style="margin-right: 6px"></i>Logout</a>
 
 {% else %}
 <!-- If the user is not logged in, show login and register links-->
 <p>Please log in or register to book a table.</p>
 
 <a href="{% url 'login' %}" class="btn-soft">
-  <i class="fas fa-sign-in-alt" style="margin-right: 6px"></i>Login</a
->
+  <i class="fas fa-sign-in-alt" style="margin-right: 6px"></i>Login</a>
 <!-- Link to login page-->
 <a href="{% url 'register' %}" class="btn-soft">
-  <i class="fas fa-user-plus" style="margin-right: 6px"></i>Register</a
->
+  <i class="fas fa-user-plus" style="margin-right: 6px"></i>Register</a>
 <!-- Link to register page-->
 {% endif %}
 <!-- Ends the conditional statement-->

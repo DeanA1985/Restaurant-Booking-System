@@ -14,8 +14,7 @@
 
     <br />
     <a href="{% url 'modify_booking' booking.id %}" class="modify-btn"
-      >Modify Booking</a
-    >
+      >Modify Booking</a>
     <a
       href="{% url 'cancel_booking' booking.id %}"
       class="delete-btn"
@@ -31,6 +30,5 @@
 {% endif %}
 
 <a href="{% url 'home' %}" class="btn-soft">
-  <i class="fas fa-home" style="margin-right: 6px"></i>Back to Home</a
->
+  <i class="fas fa-home" style="margin-right: 6px"></i>Back to Home</a>
 {% endblock %}

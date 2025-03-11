@@ -1,3 +1,8 @@
+"""
+This module defines the forms used in the restaurant booking
+system. Includes custom validation for booking dates and
+fields.
+"""
 from django import forms  # Djangos built in form system
 from accounts.models import Booking  # Import the booking model
 from datetime import datetime, time, timedelta

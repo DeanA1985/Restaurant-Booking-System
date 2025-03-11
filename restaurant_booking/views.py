@@ -1,3 +1,10 @@
+"""
+Views for the restaurant booking system.
+
+This module includes views for homepage rendering, booking
+creation, viewing user bookings and othe booking related
+functionalities.
+"""
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.exceptions import ValidationError
@@ -8,9 +15,7 @@ from .forms import BookingForm
 from accounts.models import Booking
 
 
-# ==============================
 # Restrict Access to Bookings
-# ==============================
 
 
 @login_required
@@ -44,9 +49,7 @@ def menu_view(request):
     """View the restaurant's menu"""
     return render(request, 'menu.html')
 
-# =======================================
 # Create a new booking with validation
-# =======================================
 
 
 @login_required
@@ -83,9 +86,8 @@ def create_booking(request):
         "available_times": available_times
     })
 
-# ======================================
+
 # Cancel a booking
-# ======================================
 
 
 @login_required
@@ -98,9 +100,8 @@ def cancel_booking(request, booking_id):
         messages.error(request, "Booking not found.")
     return redirect("view_bookings")
 
-# ==========================================
+
 # Modify a Booking
-# ==========================================
 
 
 @login_required
