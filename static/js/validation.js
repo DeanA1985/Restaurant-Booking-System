@@ -1,7 +1,16 @@
-// Run this script only after the page fully loads
+/**
+ * Runs the script after the DOM has fully loaded.
+ * Initialises form and submit button references,
+ * and sets up valiadtion logic.
+ */
 document.addEventListener("DOMContentLoaded", function () {
   let bookingForm = document.getElementById("bookingForm");
   let submitButton = document.querySelector("button[type='submit']");
+
+/**
+ * Checks whether all form fields have valid input.
+ * Disables the submit button if any field is empty.
+ */  
 
   function checkFormValidity() {
     let table = document.getElementById("table_number").value.trim();
@@ -12,29 +21,35 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.disabled = !table || !date || !time || !guests;
   }
 
-  // Check form validity on every input change
+/**
+ * Adds input event listener to  form fields.
+ * Revalidates from fields on user input.
+ */
   document.querySelectorAll("#bookingForm input").forEach((input) => {
     input.addEventListener("input", checkFormValidity);
   });
 
-  // Prevent form submission if fields are empty
+/**
+ * Prevents form submission if submit button is disabled.
+ * Alerts user that all fields must be filled.
+ */
   bookingForm.addEventListener("submit", function (event) {
     if (submitButton.disabled) {
       event.preventDefault();
       alert("All fields must be filled before submitting!");
     }
   });
-
-  checkFormValidity(); // Initial check on page load
+  // Initial validation check on page load
+  checkFormValidity(); 
 });
 
-// ==========================================
-//Restrict Date Selection to Today or Future
-// ==========================================
-
+/**
+ * Restricts date input to future dates only.
+ * Sets the minimum date to tomorrow.
+ */
 let dateInput = document.getElementById("date");
 let today = new Date();
-today.setHours(0, 0, 0, 0); // Clears time portion
+today.setHours(0, 0, 0, 0); // Normalise time to 00:00:00
 
 // Set min date to tomorrow
 let tomorrow = new Date(today);
@@ -47,20 +62,24 @@ let day = tomorrow.getDate().toString().padStart(2, "0");
 let minDate = "${year}-${month}-${day}";
 dateInput.setAttribute("min", minDate);
 
-// Prevent selecting a past date manually
+/**
+ * Prevents the user from manually selecting today's date or
+ * past dates. Alerts user and resets the input if invalid.
+ */
 dateInput.addEventListener("change", function () {
   let selectedDate = new Date(dateInput.value);
   selectedDate.setHours(0, 0, 0, 0);
-  
+
   if (selectedDate < tomorrow) {
     alert("Bookings must be made at least one day in advance.");
     dateInput.value = ""; //Reset invalid input
   }
 });
 
-// =====================================================
-//Restrict Table Number Selection (1-20) **
-// =====================================================
+/**
+ * Ensures table number is between 1 and 20.
+ * Adjusts value automatically if outside this range.
+ */
 let tableInput = document.getElementById("table_number");
 tableInput.addEventListener("input", function () {
   let tableNumber = parseInt(tableInput.value, 10);
@@ -71,9 +90,10 @@ tableInput.addEventListener("input", function () {
   }
 });
 
-// =========================================================
-// Restrict Guest Selection (1-10) per table
-// =========================================================
+/**
+ * Ensures the number of guests is between 1 and 10.
+ * Adjusts value automatically if outside this range.
+ */
 let guestsInput = document.getElementById("guests");
 guestsInput.addEventListener("input", function () {
   let guests = parseInt(guestsInput.value, 10);
