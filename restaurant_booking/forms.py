@@ -18,8 +18,11 @@ class BookingForm(forms.ModelForm):
             raise ValidationError("Please provide a valid booking date.")
 
         # Prevent booking dates in the past
-        if date < timezone.now().date():
-            raise ValidationError("Booking date cannot be in the past.")
+        today = timezone.now().date()
+        if date <= today:
+            raise ValidationError(
+                "Bookings must be made at least one day in advance."
+            )
 
         return date
 

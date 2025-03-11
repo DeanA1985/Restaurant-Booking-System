@@ -34,17 +34,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let dateInput = document.getElementById("date");
 let today = new Date();
-let year = today.getFullYear();
-let month = (today.getMonth() + 1).toString().padStart(2, "0");
-let day = today.getDate().toString().padStart(2, "0");
+today.setHours(0, 0, 0, 0); // Clears time portion
+
+// Set min date to tomorrow
+let tomorrow = new Date(today);
+tomorrow.setDate(tomorrow.getDate() + 1);
+
+// Format as yyyy-mm-dd for HTML input
+let year = tomorrow.getFullYear();
+let month = (tomorrow.getMonth() + 1).toString().padStart(2, "0");
+let day = tomorrow.getDate().toString().padStart(2, "0");
 let minDate = "${year}-${month}-${day}";
 dateInput.setAttribute("min", minDate);
 
 // Prevent selecting a past date manually
 dateInput.addEventListener("change", function () {
   let selectedDate = new Date(dateInput.value);
-  if (selectedDate < today) {
-    alert("Booking date cannot be in the past.");
+  selectedDate.setHours(0, 0, 0, 0);
+  
+  if (selectedDate < tomorrow) {
+    alert("Bookings must be made at least one day in advance.");
     dateInput.value = ""; //Reset invalid input
   }
 });
