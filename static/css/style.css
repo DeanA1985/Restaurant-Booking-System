@@ -209,7 +209,9 @@ h1 {
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {
-    padding: 10px;
+    max-width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
   .navbar {
@@ -230,5 +232,36 @@ h1 {
   .btn-soft {
     width: 100%;
     text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  .btn-soft:last-child {
+    margin-bottom: 0;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  form p {
+    margin-bottom: 10px;
+  }
+
+  /* extra small devices (phones under 480px */
+  @media (max-width: 480px) {
+    .btn-soft {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    /* optional: reduce font size slightly*/
+    .btn-soft i {
+      margin-right: 5px;
+    }
   }
 }
