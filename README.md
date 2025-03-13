@@ -107,7 +107,7 @@ extra layer of user validation before Django processes the data on the backend.
 
 ### **1. Homepage **
 
-![HomePage](static/images/Home.png)
+![HomePage](docs/Home.png)
 
 - Welcomes users with background imagery
 - Buttons to Book table, Login or Register
@@ -115,21 +115,21 @@ extra layer of user validation before Django processes the data on the backend.
 
 ### **2. Register **
 
-![Register](static/images/Register.png)
+![Register](docs/Register.png)
 
 - New users create accounts
 - Redirects to login upon success
 
 ### **3. Login **
 
-![Login](static/images/Login.png)
+![Login](docs/Login.png)
 
 - Users log in to access dashboard
 - Navbar dynamically updates to reflect user state
 
 ### **4. Book a Table **
 
-![Book](static/images/Book.png)
+![Book](docs/Book.png)
 
 - Booking form with date, time and guests
 - Form validation ensures future date/time
@@ -137,14 +137,14 @@ extra layer of user validation before Django processes the data on the backend.
 
 ### **5. My Bookings **
 
-![MyBookings](static/images/My%20Bookings.png)
+![MyBookings](docs/MyBookings.png)
 
 - Shows current user's bookings
 - Options to edit or cancel the booking
 
 ### **6. Edit Booking **
 
-![EditBooking](static/images/Edit%20Bookings.png)
+![EditBooking](docs/EditBookings.png)
 
 - Booking form prefilled with current info
 - Re-validates on submission
@@ -178,7 +178,7 @@ Although this is not the final mockup of my project this is a mockup of what I p
 look like. I had no prior knowledge of how Django makes things much more easier and that visually the project
 would take on a en entirely different appearance.
 
-[Click here to view the Wireframes (PDF)](<docs/Your%20First%20Project%20(1).pdf>)
+[Click here to view the Wireframes (PDF)](<docs/YourFirstProject.pdf>)
 
 ## Technologies Used
 
@@ -217,7 +217,7 @@ Two rounds of full manual testing were conducted during the final stages of the 
 
 ### Manual Testing Table
 
-[Click here to access the Manual Testing Table](<docs/Manual Testing Table.docx>)
+[Click here to access the Manual Testing Table](<docs/ManualTestingTable.docx>)
 
 > \_Note: Testing logs and outcomes were also documented on the [GitHub Kanban Board](#kanban-board).\*
 
@@ -240,7 +240,7 @@ Code was checked for:
 - **Indentation and whitespace**
 - **Unused imports and variables**
 
-![Linter](static/images/Linter.png)
+![Linter](docs/Linter.png)
 
 ❌ **CSS Validator Jigsaw**
 
@@ -251,13 +251,13 @@ Code was checked for:
 - **Valid media queries** and responsive rules
 
 Only one error which appears to have no conflicts with the functionality of the app.
-![CSS](static/images/CSSresult.png)
+![CSS](docs/CSSresult.png)
 
 ❌ **W3C HTML Validator**
 
 - On passing the code through the validator the returned results are as follows:
 
-![HTML](static/images/HTML%20Validator.png)
+![HTML](docs/HTMLValidator.png)
 
 ✅ I use a trailing slash because I run my HTML markup through a formatting tool that’s hardcoded to add trailing slashes to all void-element start tags, without any option for me to prevent the tool from doing that, namely Prettier which is known for giving
 trailing slashes to void elements. It can be avoided and it is currently having no effect on the front end however for future best
