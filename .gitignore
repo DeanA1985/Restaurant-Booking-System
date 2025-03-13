@@ -1,13 +1,19 @@
+# Ignore the SQLite database
 db.sqlite3
-accounts/__pycache__/forms.cpython-312.pyc
-accounts/__pycache__/models.cpython-312.pyc
-accounts/__pycache__/urls.cpython-312.pyc
-accounts/__pycache__/views.cpython-312.pyc
-accounts/migrations/__pycache__/__init__.cpython-312.pyc
-accounts/migrations/__pycache__/0001_initial.cpython-312.pyc
-restaurant_booking/__pycache__/urls.cpython-312.pyc
-restaurant_booking/__pycache__/views.cpython-312.pyc
-accounts/__pycache__/models.cpython-312.pyc
-restaurant_booking/__pycache__/urls.cpython-312.pyc
-restaurant_booking/__pycache__/views.cpython-312.pyc
-db.sqlite3
+
+# Ignore all environment variables
+.env
+*.env
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments (if it's in the project)
+venv/
+
+# Ignore collected static files (optional)
+staticfiles/
+
+# Ignore VSCode settings (optional)
+.vscode/
