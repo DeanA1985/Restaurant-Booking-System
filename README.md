@@ -181,7 +181,11 @@ would take on an entirely different appearance.
 
 ###
 
-![Wireframe]()
+![Wireframe](docs/Wireframe1.png)
+![Wireframe](docs/Wireframe2.png)
+![Wireframe](docs/Wireframe3.png)
+![Wireframe](docs/Wireframe4.png)
+![Wireframe](docs/Wireframe5.png)
 
 ---
 
