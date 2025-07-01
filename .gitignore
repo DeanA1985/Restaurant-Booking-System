@@ -13,7 +13,7 @@ __pycache__/
 venv/
 
 # Ignore collected static files (optional)
-staticfiles/
+# staticfiles/
 
 # Ignore VSCode settings (optional)
 .vscode/
