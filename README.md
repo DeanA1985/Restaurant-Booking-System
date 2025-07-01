@@ -17,7 +17,7 @@ Live site: [restaurant-booking-system-8cn9.onrender.com](https://restaurant-book
 3. [Javascript Form Validation](#javascript-form-validation)
 4. [Pages & User Flows](#pages--user-flows)
 5. [Wireframes](#wireframes)
-6. [Design](#design)
+6. [Design & Color Scheme](#design)
 7. [Technologies Used](#technologies-used)
 8. [Testing](#testing)
 9. [Code Compliance & Validation](#code-compliance--validation)
