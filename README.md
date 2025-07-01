@@ -321,39 +321,7 @@ Two rounds of full manual testing were conducted during the final stages of the 
 <head>
   <meta charset="UTF-8">
   <title>Manual Testing Report</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      background-color: #f4f4f4;
-    }
-    h2 {
-      color: #333;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border: 1px solid #ccc;
-      vertical-align: top;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    td.pass {
-      color: green;
-      font-weight: bold;
-    }
-    td.fail {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
+  
 </head>
 <body>
 
