@@ -22,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0rk@)5m0!u++fa$3&skk$l__0m==gbii&i*769_3o9_&-zgpd$'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'restaurant_booking.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(
-        os.getenv("DATABASE_URL", "postgres://postgres:postgres@localhost:5432/restaurant_booking_db")
-    )
+        os.getenv("DATABASE_URL",))
+
 }
 
 
