@@ -176,8 +176,7 @@ extra layer of user validation before Django processes the data on the backend.
 ## Wireframes
 
 Although this is not the final mockup of my project this is a mockup of what I presumed the project would
-look like. I had no prior knowledge of how Django makes things much more easier and that visually the project
-would take on an entirely different appearance.
+look like. A simple user journey that takes you from the home page (login) to booking a table and being able to check your existing bookings and delete those bookings as well as being able to view the menu and logout.
 
 ###
 
