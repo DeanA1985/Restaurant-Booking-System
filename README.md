@@ -316,7 +316,135 @@ Two rounds of full manual testing were conducted during the final stages of the 
 
 ### Manual Testing Table
 
-[Click here to access the Manual Testing Table](<docs/Manual Testing Table.docx>)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual Testing Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ccc;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    td.pass {
+      color: green;
+      font-weight: bold;
+    }
+    td.fail {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2> Manual Testing Report</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Feature Tested</th>
+        <th>Test Input</th>
+        <th>Expected Result</th>
+        <th>Actual Result</th>
+        <th>Pass/Fail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>User Registration</td>
+        <td>Valid username, email password</td>
+        <td>Account created and user redirected to homepage</td>
+        <td>Account created successfully</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>User Login</td>
+        <td>Correct credentials</td>
+        <td>User logged in and redirected to homepage</td>
+        <td>Works as expected</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Login</td>
+        <td>Invalid credentials</td>
+        <td>Error message shown: “Invalid username or password.”</td>
+        <td>Error message displayed</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Booking Form Submission</td>
+        <td>Table = 5, Date = Tomorrow, Time = 12:00, Guests = 4</td>
+        <td>Booking created and visible in bookings list. Success message confirmed on screen</td>
+        <td>Booking saved correctly</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Booking Form (Invalid)</td>
+        <td>Table = 25, Date = Today, Guests = 10</td>
+        <td>Input validation blocks submission with alert message:<br>“Bookings must be made at least one day in advance.”</td>
+        <td>Validation works</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Forgot Password</td>
+        <td>Valid email entered</td>
+        <td>Confirmation message: “A password reset link has been sent to your email.”</td>
+        <td>Confirmation shown. Green success message</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Forgot Password</td>
+        <td>Incorrect email entered</td>
+        <td>Confirmation message: “No account found with that email.”</td>
+        <td>Error message shown</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Responsive Design</td>
+        <td>Scale screen to mobile width</td>
+        <td>Navbar stacks vertically and buttons span full width</td>
+        <td>Layout adjusts correctly</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Form Validation</td>
+        <td>Leave all booking fields empty and submit</td>
+        <td>Alert: All fields must be filled</td>
+        <td>Alert triggered</td>
+        <td class="pass">Pass</td>
+      </tr>
+      <tr>
+        <td>Double Booking Prevention</td>
+        <td>Table = 3, Date = 2025-03-15, Time = 13:00, Guests = 4</td>
+        <td>Message stating that booking has been made on this date and table</td>
+        <td>Booking prevented successfully</td>
+        <td class="pass">Pass</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
 
 > \_Note: Testing logs and outcomes were also documented on the [GitHub Kanban Board](#kanban-board).\*
 
