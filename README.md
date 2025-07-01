@@ -179,6 +179,10 @@ Although this is not the final mockup of my project this is a mockup of what I p
 look like. I had no prior knowledge of how Django makes things much more easier and that visually the project
 would take on an entirely different appearance.
 
+###
+
+![Wireframe]()
+
 ---
 
 ## Design & Color Scheme
