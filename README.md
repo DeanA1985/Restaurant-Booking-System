@@ -205,50 +205,50 @@ Colors were chosen to balance luxury with usability. The application uses a dark
   <tbody>
     <tr>
       <td>Black</td>
-      <td><div style="width:100px; height:25px; background-color:#000000; border:1px solid #ccc;"></div></td>
-      <td>#000000</td>
+      <td><img src="static/images/black.png" alt="Black"></td>
+      <td><code>#000000</code></td>
       <td>Main background for a dark, elegant theme</td>
     </tr>
     <tr>
       <td>Golden Yellow</td>
-      <td><div style="width:100px; height:25px; background-color:#FFD700; border:1px solid #ccc;"></div></td>
-      <td>#FFD700</td>
+      <td><img src="static/images/golden-yellow.png" alt="Golden Yellow"></td>
+      <td><code>#FFD700</code></td>
       <td>Used for navigation highlights and buttons</td>
     </tr>
     <tr>
       <td>Tomato Red</td>
-      <td><div style="width:100px; height:25px; background-color:#FF6347; border:1px solid #ccc;"></div></td>
-      <td>#FF6347</td>
+      <td><img src="static/images/tomato-red.png" alt="Tomato Red"></td>
+      <td><code>#FF6347</code></td>
       <td>Accent color in food imagery for appetite appeal</td>
     </tr>
     <tr>
       <td>Dark Red</td>
-      <td><div style="width:100px; height:25px; background-color:#8B0000; border:1px solid #ccc;"></div></td>
-      <td>#8B0000</td>
+      <td><img src="static/images/dark-red.png" alt="Dark Red"></td>
+      <td><code>#8B0000</code></td>
       <td>Rich tone to support savory food visuals</td>
     </tr>
     <tr>
       <td>White</td>
-      <td><div style="width:100px; height:25px; background-color:#FFFFFF; border:1px solid #ccc;"></div></td>
-      <td>#FFFFFF</td>
+      <td><img src="static/images/white.png" alt="White"></td>
+      <td><code>#FFFFFF</code></td>
       <td>Text color on dark backgrounds for clarity</td>
     </tr>
     <tr>
       <td>Dark Wood 1</td>
-      <td><div style="width:100px; height:25px; background-color:#2F2F2F; border:1px solid #ccc;"></div></td>
-      <td>#2F2F2F</td>
-      <td>Represents deep wooden texture backgrounds</td>
+      <td><img src="static/images/dark-wood-1.png" alt="Dark Wood 1"></td>
+      <td><code>#2F2F2F</code></td>
+      <td>Represents deep wooden texture background</td>
     </tr>
     <tr>
       <td>Dark Wood 2</td>
-      <td><div style="width:100px; height:25px; background-color:#4B3621; border:1px solid #ccc;"></div></td>
-      <td>#4B3621</td>
+      <td><img src="static/images/dark-wood-2.png" alt="Dark Wood 2"></td>
+      <td><code>#4B3621</code></td>
       <td>Enhances warmth and rustic ambiance</td>
     </tr>
     <tr>
       <td>Herb Green</td>
-      <td><div style="width:100px; height:25px; background-color:#228B22; border:1px solid #ccc;"></div></td>
-      <td>#228B22</td>
+      <td><img src="static/images/herb-green.png" alt="Herb Green"></td>
+      <td><code>#228B22</code></td>
       <td>Used in garnish imagery to add freshness</td>
     </tr>
   </tbody>
