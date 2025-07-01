@@ -177,9 +177,7 @@ extra layer of user validation before Django processes the data on the backend.
 
 Although this is not the final mockup of my project this is a mockup of what I presumed the project would
 look like. I had no prior knowledge of how Django makes things much more easier and that visually the project
-would take on a en entirely different appearance.
-
-[Click here to view the Wireframes (PDF)](<docs/Your%20First%20Project%20(1).pdf>)
+would take on an entirely different appearance.
 
 ---
 
