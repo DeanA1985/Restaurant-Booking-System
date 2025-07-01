@@ -183,7 +183,7 @@ would take on a en entirely different appearance.
 
 ---
 
-## 🎨 Design & Color Scheme
+## Design & Color Scheme
 
 The user interface of the **BookATable** restaurant booking system is designed to create a premium, elegant, and appetizing experience. The visual design choices were carefully made to reflect a fine dining atmosphere — sophisticated, welcoming, and easy to use.
 
